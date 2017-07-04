@@ -23,6 +23,10 @@ gastown.annual_revenue = 190000
 gastown.womens_apparel = false
 gastown.mens_apparel = true
 
+burnaby.save
+richmond.save
+gastown.save
+
 puts Store.count()
 
 puts gastown.name
