@@ -15,6 +15,8 @@ puts "----------"
 # Loop through each of these stores and output their name and annual revenue on each line.
   # Do another fetch but this time load stores that carry women's apparel and are generating less than $1M in annual revenue.
 
+# 4
+
 surrey = Store.create
 surrey.name = "Surrey"
 surrey.annual_revenue = 244000
@@ -39,7 +41,22 @@ yaletown.save
 
 @stores = Store.all
 
+#2
+@mens_stores = Store.where(mens_apparel: 'true')
+
+puts @mens_stores.inspect
+
+# 3
 @stores.each do |store|
   puts store.name
   puts store.annual_revenue
+end
+
+# 4
+@womensStores = Store.where(womens_apparel: 'true')
+
+@womensStores.each do |store|
+  if store.annual_revenue < 1000000
+    puts "Wow #{store.name} sucks"
+  end
 end
